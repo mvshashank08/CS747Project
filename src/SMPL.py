@@ -158,6 +158,8 @@ if __name__ == '__main__':
 
     verts, j, r = smpl(vbeta, vpose, get_skin = True)
 
+    print("vertices:", verts.shape, "joints:", j.shape, "r:", r.shape)
+
     smpl.save_obj(verts[0].cpu().numpy(), './mesh.obj')
 
     rpose = reflect_pose(pose)
